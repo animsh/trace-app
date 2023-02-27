@@ -1,13 +1,45 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import LoginForm from "./components/LoginPage";
+import SignupPage from "./components/SignupPage";
+import HomePage from "./components/HomePage";
+import ErrorPage from "./components/ErrorPage";
+import NavBar from "./components/NavBar";
+import reportWebVitals from "./reportWebVitals";
+import "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "material-components-web/dist/material-components-web.min.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/login",
+    element: <LoginForm />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/signup",
+    element: <SignupPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/home",
+    element: <HomePage />,
+    errorElement: <ErrorPage />,
+  },
+]);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
