@@ -1,12 +1,20 @@
 import React, { Component } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Constants from "./Constants";
+import ApiServices from "./ApiServices";
 
 class LoginPage extends Component {
   state = {
     email: "",
     password: "",
   };
+
+  constructor(props) {
+    super(props);
+    // Check if user is already logged in
+    Constants.fetchCookiesAndValidate("/login", "/home");
+  }
 
   validateEmail = () => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -29,60 +37,32 @@ class LoginPage extends Component {
     this.setState({ password: e.target.value });
   };
 
+  forwardToSignup = (e) => {
+    // const cookies = new Cookies();
+    // cookies.set("myCat", "Pacman", { path: "/" });
+    // console.log(cookies.get("myCat")); // Pacman
+    window.location.href = "/signup";
+  };
+
   handleSubmit = (e) => {
     e.preventDefault();
 
     // Check if email and password are empty
     if (!this.state.email || !this.state.password) {
-      toast.error("Please enter your email and password", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      Constants.CUSTOM_TOAST(false, "Please enter email and password");
       return;
     } else {
       console.log(this.validateEmail(), this.validatePassword());
       if (!this.validateEmail()) {
-        toast.error("Please enter valid email", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
+        Constants.CUSTOM_TOAST(false, "Please enter valid email");
         return;
       }
       if (!this.validatePassword()) {
-        toast.error("Please enter valid password", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
+        Constants.CUSTOM_TOAST(false, "Please enter valid password");
         return;
       }
-      toast.success("Login Successfull", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+
+      ApiServices.makeLoginCall(this.state);
     }
 
     // Continue with form submission
@@ -133,7 +113,11 @@ class LoginPage extends Component {
             </div>
 
             <div className="d-flex justify-content-between">
-              <button type="button" className="btn btn-secondary">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={this.forwardToSignup}
+              >
                 Create
               </button>
               <button

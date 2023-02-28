@@ -5,8 +5,8 @@ import App from "./App";
 import LoginForm from "./components/LoginPage";
 import SignupPage from "./components/SignupPage";
 import HomePage from "./components/HomePage";
+import ProfilePage from "./components/ProfilePage";
 import ErrorPage from "./components/ErrorPage";
-import NavBar from "./components/NavBar";
 import reportWebVitals from "./reportWebVitals";
 import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -32,6 +32,11 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <HomePage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/profile",
+    element: <ProfilePage />,
     errorElement: <ErrorPage />,
   },
 ]);

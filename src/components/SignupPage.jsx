@@ -2,97 +2,22 @@ import React, { Component } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import ApiServices from "./ApiServices";
+import Constants from "./Constants";
 
 class SignupPage extends Component {
+  constructor(props) {
+    super(props);
+    // Check if user is already logged in
+    Constants.fetchCookiesAndValidate("/signup", "/home");
+  }
+
   state = {
     name: "",
     email: "",
     phone: "",
     password: "",
     retypePassword: "",
-  };
-
-  makeAPIRequest = () => {
-    // const axios = require("axios").default;
-
-    // const instance = axios.create({
-    //   baseURL: "http://127.0.0.1:8000/api/users",
-    // });
-
-    axios
-      .post("http://127.0.0.1:8000/api/users/signup", {
-        name: this.state.name,
-        email: this.state.email,
-        phone: this.state.phone,
-        password: this.state.password,
-      })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        if (data.status === "success") {
-          toast.success("Signup Successfull", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-          });
-        } else {
-          toast.error("Signup Failed", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-          });
-        }
-      });
-
-    // fetch("http://127.0.0.1:8000/api/users/signup", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     name: this.state.name,
-    //     email: this.state.email,
-    //     phone: this.state.phone,
-    //     password: this.state.password,
-    //   }),
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     if (data.status === "success") {
-    //       toast.success("Signup Successfull", {
-    //         position: "top-right",
-    //         autoClose: 5000,
-    //         hideProgressBar: false,
-    //         closeOnClick: true,
-    //         pauseOnHover: true,
-    //         draggable: true,
-    //         progress: undefined,
-    //         theme: "light",
-    //       });
-    //     } else {
-    //       toast.error("Signup Failed", {
-    //         position: "top-right",
-    //         autoClose: 5000,
-    //         hideProgressBar: false,
-    //         closeOnClick: true,
-    //         pauseOnHover: true,
-    //         draggable: true,
-    //         progress: undefined,
-    //         theme: "light",
-    //       });
-    //     }
-    //   });
   };
 
   validateName = () => {
@@ -156,17 +81,7 @@ class SignupPage extends Component {
       this.validatePassword() &&
       this.validateRetypePassword()
     ) {
-      // toast.success("Signup Successfull", {
-      //   position: "top-right",
-      //   autoClose: 5000,
-      //   hideProgressBar: false,
-      //   closeOnClick: true,
-      //   pauseOnHover: true,
-      //   draggable: true,
-      //   progress: undefined,
-      //   theme: "light",
-      // });
-      this.makeAPIRequest();
+      ApiServices.makeSignupCall(this.state);
     } else {
       console.log(
         "Invalid details",
@@ -176,17 +91,12 @@ class SignupPage extends Component {
         this.validatePassword(), // true
         this.validateRetypePassword() // true
       );
-      toast.error("Please enter valid details", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      Constants.CUSTOM_TOAST(false, "Invalid details");
     }
+  };
+
+  forwardToLogin = (e) => {
+    window.location.href = "/login";
   };
 
   render() {
@@ -247,7 +157,7 @@ class SignupPage extends Component {
                 required
                 onChange={this.handlePasswordChange}
               />
-              <label for="password-input">Password</label>
+              <label htmlFor="password-input">Password</label>
               <div id="password-help" className="form-text">
                 Password must be at least 8 characters long and contain at{" "}
                 <br />
@@ -271,7 +181,11 @@ class SignupPage extends Component {
             </div>
 
             <div className="d-flex justify-content-between">
-              <button type="button" className="btn btn-secondary">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={this.forwardToLogin}
+              >
                 Login
               </button>
               <button
