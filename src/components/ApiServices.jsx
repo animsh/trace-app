@@ -17,10 +17,12 @@ class ApiServices {
           let data = response.data;
           if (data.status === "success") {
             const cookies = new Cookies();
-            console.log(data.token);
-            console.log(data.user.id);
-            cookies.set("access_token", data.token, { path: "/" });
-            cookies.set("access_id", data.user.id, { path: "/" });
+            cookies.set("access_token", data.data.token, { path: "/" });
+            cookies.set("access_id", data.data.user_id, { path: "/" });
+            cookies.set("access_key", data.data.key, { path: "/" });
+            console.log(cookies.get("access_token"));
+            console.log(cookies.get("access_id"));
+            console.log(cookies.get("access_key"));
             Constants.CUSTOM_TOAST(true, "Signup Successfull");
             Constants.fetchCookiesAndValidate("/login", "/home");
           } else {
@@ -50,9 +52,10 @@ class ApiServices {
             const cookies = new Cookies();
             cookies.set("access_token", data.data.token, { path: "/" });
             cookies.set("access_id", data.data.user_id, { path: "/" });
-
+            cookies.set("access_key", data.data.key, { path: "/" });
             console.log(cookies.get("access_token"));
             console.log(cookies.get("access_id"));
+            console.log(cookies.get("access_key"));
             Constants.CUSTOM_TOAST(true, "Login Successfull");
             Constants.fetchCookiesAndValidate("/login", "/home");
           } else {

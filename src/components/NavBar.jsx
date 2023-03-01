@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class NavBar extends Component {
   render() {
     return (
-      <nav className="container navbar navbar-expand-lg navbar-light bg-white fixed-top">
-        <div className="container-fluid">
+      <nav className=" navbar navbar-expand navbar-light bg-white fixed-top">
+        <div className="container container-fluid">
           <a className="navbar-brand" href="/home">
             <h4> Trace - Secure File Transfer</h4>
           </a>

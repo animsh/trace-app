@@ -16,6 +16,7 @@ function HomePage() {
     setDecodeModal(!decodeModal);
   };
 
+  Constants.fetchCookiesAndValidate("/home", "/home");
   return (
     <React.Fragment>
       <NavBar />

@@ -21,6 +21,19 @@ function EncodeModal(props) {
       ? "audio"
       : "video";
 
+    if (coverfile === undefined) {
+      Constants.CUSTOM_TOAST(false, "Please Select Cover File");
+      return;
+    }
+    if (hiddenfile === undefined) {
+      Constants.CUSTOM_TOAST(false, "Please Select File To Hide");
+      return;
+    }
+    if (publickey === "") {
+      Constants.CUSTOM_TOAST(false, "Please Enter Public Key of Recipient");
+      return;
+    }
+
     let formData = new FormData();
     formData.append("cover_file", coverfile);
     formData.append("hidden_file", hiddenfile);
@@ -30,7 +43,10 @@ function EncodeModal(props) {
     formData.forEach((value, key) => {
       console.log(key + " " + value);
     });
-    Constants.CUSTOM_TOAST(true, "We Are Encoding Your File");
+    Constants.CUSTOM_TOAST(
+      true,
+      "We Are Encoding Your File, You can leave after 5 second, if successfull file will be reflected in your storage"
+    );
     axios
       .post("http://127.0.0.1:8000/api/users/encode", formData, {
         headers: {
@@ -89,6 +105,7 @@ function EncodeModal(props) {
               role="group"
               aria-label="Basic radio toggle button group"
             >
+              <label className="form-label me-4">Cover File Type:</label>
               <div className="form-check me-4">
                 <input
                   className="form-check-input"

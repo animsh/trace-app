@@ -6,6 +6,7 @@ import LoginForm from "./components/LoginPage";
 import SignupPage from "./components/SignupPage";
 import HomePage from "./components/HomePage";
 import ProfilePage from "./components/ProfilePage";
+import StoragePage from "./components/StoragePage";
 import ErrorPage from "./components/ErrorPage";
 import reportWebVitals from "./reportWebVitals";
 import "react-bootstrap";
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
   {
     path: "/profile",
     element: <ProfilePage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/storage",
+    element: <StoragePage />,
     errorElement: <ErrorPage />,
   },
 ]);
