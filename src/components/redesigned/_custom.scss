@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$primary: #6f2cf4;
+@import "~bootstrap/scss/bootstrap";
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.form-control:not(:focus) {
+  background-color: #f3f3f4;
+}
+
+.custom-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.custom-text {
+  font-size: 0.9rem;
+}
+
+.scale-to-height {
+  min-height: calc(100vh - 115px);
+}
+
+.container-with-border {
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.ml3 {
+  text-align: center;
+  color: #e5e5e5;
+  font-family: "Poppins", sans-serif;
+  font-size: 4rem;
+  padding: 1rem;
+}
