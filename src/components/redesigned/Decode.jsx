@@ -68,9 +68,9 @@ const Decode = () => {
       );
       console.log(response.data);
       if (response.data.status === "success") {
-        console.log("Encoding Successfull " + response.data.message);
+        console.log("Decoded Successfull " + response.data.message);
         setIsLoading(false);
-        setMessage("Encoded Successfully");
+        setMessage("Decoded Successfully");
         setIsError(false);
         setIsSuccess(true);
       } else {
