@@ -64,8 +64,10 @@ const Signup = ({ toggleAuth }) => {
       });
     } catch (error) {
       console.log(error);
-      setErrorMessage(error);
-      setShowError(false);
+      setErrorMessage(error.message);
+      setShowError(true);
+    } finally {
+      setIsLoading(false);
     }
   };
 
