@@ -107,7 +107,27 @@ const Encode = () => {
           </div>
         )}
         <div className="col-md-4 col-lg-4">
-          <h5>Infomation about various algorithm used.</h5>
+          <h5>Infomation about inputs.</h5>
+          <div>
+            <h5 className="form-label custom-label">Cover File</h5>
+            <p style={{ textAlign: 'justify' }}>This field is used to select the cover file that will be used for encoding. The cover file can be an image, audio file, or video file.</p>
+          </div>
+          <div>
+            <h5 className="form-label custom-label">File to Encode</h5>
+            <p style={{ textAlign: 'justify' }}> This field is used to select the file that will be encoded into the cover file. The file to encode can be any type of file.</p>
+          </div>
+          <div>
+            <h5 className="form-label custom-label">Receiver's ID</h5>
+            <p style={{ textAlign: 'justify' }}>This field is used to enter the ID or public key of the receiver. It identifies the intended recipient of the encoded message.</p>
+          </div>
+          <div>
+            <h5 className="form-label custom-label">Cover File Type</h5>
+            <p style={{ textAlign: 'justify' }}>This field allows the user to select the type of the cover file from three options: Image, Audio, or Video. The selected option determines the type of the cover file for encoding</p>
+          </div>
+          <div>
+            <h5 className="form-label custom-label">Steganography Method</h5>
+            <p style={{ textAlign: 'justify' }}>This field allows the user to select the steganography method from two options: Simple or Shuffle. The selected method determines how the encoding process will be performed.</p>
+          </div>
         </div>
         <div className="col-md-8 col-lg-8">
           <form style={{ minWidth: "400px" }} onSubmit={saveData}>

@@ -104,7 +104,27 @@ const Decode = () => {
           </div>
         )}
         <div className="col-md-4 col-lg-4">
-          <h5>Infomation about various algorithm used.</h5>
+          <h5>Infomation about inputs.</h5>
+          <div>
+            <h5 className="form-label custom-label">Encoded File</h5>
+            <p style={{ textAlign: 'justify' }}>This field is used to select the encoded file that will be decoded. The encoded file can be an image, audio file, or video file.</p>
+          </div>
+          <div>
+            <h5 className="form-label custom-label">Key File</h5>
+            <p style={{ textAlign: 'justify' }}>This field is used to select the key file that contains the necessary decryption key for decoding the encoded file.</p>
+          </div>
+          <div>
+            <h5 className="form-label custom-label">Encrypted Password</h5>
+            <p style={{ textAlign: 'justify' }}>This field is used to enter the encrypted password. The encrypted password is required for the decoding process and is usually derived from the sender's password.</p>
+          </div>
+          <div>
+            <h5 className="form-label custom-label">Encoded File Type</h5>
+            <p style={{ textAlign: 'justify' }}>This field allows the user to select the type of the encoded file from three options: Image, Audio, or Video. The selected option specifies the type of the encoded file that will be decoded.</p>
+          </div>
+          <div>
+            <h5 className="form-label custom-label">Your User ID</h5>
+            <p style={{ textAlign: 'justify' }}>TThis field is used to enter the user's ID. It is typically the ID of the receiver or the person who wants to decode the encoded file.</p>
+          </div>
         </div>
         <div className="col-md-8 col-lg-8">
           <form style={{ minWidth: "400px" }} onSubmit={saveData}>
