@@ -17,6 +17,7 @@ import Storage from "./components/redesigned/Storage";
 import NavBar from "./components/redesigned/NavBar";
 import Footer from "./components/redesigned/Footer";
 import Recieved from "./components/redesigned/Recieved";
+import About from "./components/redesigned/About";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
@@ -57,6 +58,8 @@ function App() {
             />
           }
         />
+        <Route path="/about" element={<About />} />
+
       </Routes>
       {isAuthenticated && <Footer />}
     </>

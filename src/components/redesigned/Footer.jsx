@@ -9,7 +9,7 @@ const Footer = () => {
           <p className="mb-0">© 2023 Trace. All rights reserved.</p>
         </div>
         <div>
-          <ul className="list-inline mb-0">
+          {/* <ul className="list-inline mb-0">
             <li className="list-inline-item mx-3">
               <a href="#">Privacy Policy</a>
             </li>
@@ -19,7 +19,8 @@ const Footer = () => {
             <li className="list-inline-item mx-3">
               <a href="#">Contact</a>
             </li>
-          </ul>
+          </ul> */}
+          <p className="mb-0">Made with 💜</p>
         </div>
       </Container>
     </footer>

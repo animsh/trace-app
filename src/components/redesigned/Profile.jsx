@@ -63,13 +63,24 @@ const Profile = ({ isAuthenticated, toggleAuth }) => {
     toggleAuth(false);
   };
 
+  const imageStyle = {
+    width: "100%",
+    aspectRatio: "1/1",
+    objectFit: "cover",
+    borderRadius: "50%",
+  };
+
+  const linkImage = `https://placehold.co/300x300?text=${username}&font=source-sans-pr`
+
+
   return (
+
     <div className="container">
       {!localStorage.getItem("isAuthenticated") && <Navigate to="/auth" />}
 
       <div className="scale-to-height row" style={{ padding: "24px" }}>
         <div className="col-md-2 col-lg-2">
-          <h5>Photo</h5>
+          <img src={linkImage} alt="User Photo" style={imageStyle} />
         </div>
         <div className="col-md-10 col-lg-10">
           <form style={{ minWidth: "400px" }} onSubmit={handleLogout}>
