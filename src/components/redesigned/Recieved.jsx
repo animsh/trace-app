@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReceivedFile from "./RecievedFile";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
+import Constants from "./Constants";
 
 const Received = () => {
   const [receivedFiles, setReceivedFiles] = useState([]);
@@ -13,7 +14,7 @@ const Received = () => {
       setReceivedMessage("Loading Received Files...");
       setIsReceived(true);
       try {
-        let response = await axios.get("http://127.0.0.1:8000/api/users/send", {
+        let response = await axios.get(Constants.API_URL + ":8000/api/users/send", {
           headers: {
             Token: localStorage.getItem("access_token"),
           },

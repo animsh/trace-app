@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
+import Constants from "./Constants";
 
 const Profile = ({ isAuthenticated, toggleAuth }) => {
   const [username, setUsername] = useState("");
@@ -25,7 +26,7 @@ const Profile = ({ isAuthenticated, toggleAuth }) => {
       };
 
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/users/me",
+        Constants.API_URL + ":8000/api/users/me",
         axiosConfig
       );
 

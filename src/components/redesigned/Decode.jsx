@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
+import Constants from "./Constants";
 
 const Decode = () => {
   const [encodedFile, setEncodedFile] = useState("");
@@ -57,7 +58,7 @@ const Decode = () => {
 
     try {
       let response = await axios.post(
-        "http://127.0.0.1:8000/api/users/decode",
+        Constants.API_URL + ":8000/api/users/decode",
         formData,
         {
           headers: {

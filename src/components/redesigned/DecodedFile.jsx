@@ -1,7 +1,8 @@
 import React from "react";
+import Constants from "./Constants";
 
 const DecodedFile = ({ file }) => {
-  const decoded_file = "http://127.0.0.1:8000/" + file.decoded_file;
+  const decoded_file = Constants.API_URL + ":8000/" + file.decoded_file;
 
   return (
     <div class="card mb-3">

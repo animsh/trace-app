@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
+import Constants from "./Constants";
 
 const Encode = () => {
   const [coverFile, setCoverFile] = useState(null);
@@ -60,7 +61,7 @@ const Encode = () => {
 
     try {
       let response = await axios.post(
-        "http://127.0.0.1:8000/api/users/encode",
+        Constants.API_URL + ":8000/api/users/encode",
         formData,
         {
           headers: {

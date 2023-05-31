@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Constants from "./Constants";
 
 const EncodedFile = ({ file }) => {
-  const encoded_file_path = "http://127.0.0.1:8000/" + file.encoded_file;
-  const key_file_path = "http://127.0.0.1:8000/" + file.key_file;
+  const encoded_file_path = Constants.API_URL + ":8000/" + file.encoded_file;
+  const key_file_path = Constants.API_URL + ":8000/" + file.key_file;
   const [toUserId, setToUserId] = useState("");
 
   const [isShareMenuOpen, setIsShareMenuOpen] = useState(false);

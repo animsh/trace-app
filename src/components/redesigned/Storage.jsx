@@ -3,6 +3,7 @@ import EncodedFile from "./EncodedFile";
 import DecodedFile from "./DecodedFile";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
+import Constants from "./Constants";
 
 const Storage = () => {
   const [encodedFiles, setEncodedFiles] = useState([]);
@@ -20,7 +21,7 @@ const Storage = () => {
       setIsEncoded(true);
       try {
         let response = await axios.get(
-          "http://127.0.0.1:8000/api/users/encodedfiles",
+          Constants.API_URL + ":8000/api/users/encodedfiles",
           {
             headers: {
               Token: localStorage.getItem("access_token"),

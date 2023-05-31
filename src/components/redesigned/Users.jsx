@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
+import Constants from "./Constants";
 
 const Users = () => {
   const [users, setUsers] = useState({});
@@ -31,7 +32,7 @@ const Users = () => {
     };
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/users",
+        Constants.API_URL + ":8000/api/users",
         postData,
         axiosConfig
       );

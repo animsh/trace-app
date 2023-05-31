@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
+import Constants from "./Constants";
 
 const Login = ({ toggleAuth }) => {
   const [email, setEmail] = useState("");
@@ -33,7 +34,7 @@ const Login = ({ toggleAuth }) => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/users/login",
+        Constants.API_URL + ":8000/api/users/login",
         postData
       );
       console.log(response.data);

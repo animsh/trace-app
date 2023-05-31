@@ -3,9 +3,9 @@ import "react-toastify/dist/ReactToastify.css";
 import Cookies from "universal-cookie";
 
 class Constants {
-  //   static get API_URL() {
-  //     return "https://api.github.com";
-  //   }
+  static get API_URL() {
+    return "http://{YOUR_IP_ADDRESS}";
+  }
 
   static sleep(ms) {
     return new Promise((res) => setTimeout(res, ms));
