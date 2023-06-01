@@ -1,8 +1,9 @@
 import React from "react";
+import Constants from "./Constants";
 
 const ReceivedFile = ({ file }) => {
-  const encoded_file_path = "http://127.0.0.1:8000/" + file.file.encoded_file;
-  const key_file_path = "http://127.0.0.1:8000/" + file.file.key_file;
+  const encoded_file_path = Constants.API_URL + ":8000/" + file.file.encoded_file;
+  const key_file_path = Constants.API_URL + ":8000/" + file.file.key_file;
 
   let dict = {
     I: "Image",

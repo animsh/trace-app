@@ -53,7 +53,7 @@ const Storage = () => {
       setIsDecoded(true);
       try {
         let response = await axios.get(
-          "http://127.0.0.1:8000/api/users/decodedfiles",
+          Constants.API_URL + ":8000/api/users/decodedfiles",
           {
             headers: {
               Token: localStorage.getItem("access_token"),
