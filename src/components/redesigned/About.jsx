@@ -6,39 +6,39 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const teamMembers = [
     {
-        name: "Professor",
-        details: "Professor details here...",
-        github: "https://github.com/professor",
-        email: "professor@example.com",
-        linkedin: "https://www.linkedin.com/professor",
+        name: "Prof. Sarika Yogesh Pabalkar ",
+        details: "Assistant Professor, Dr. D. Y. Patil Institute of Technology, Pimpri, Pune",
+        github: "",
+        email: "sarika.pabalkar@dypvp.edu.in",
+        linkedin: "",
     },
     {
-        name: "Team Member 1",
-        details: "Team member 1 details here...",
-        github: "https://github.com/member1",
-        email: "member1@example.com",
-        linkedin: "https://www.linkedin.com/member1",
+        name: "Aishwarya Patni",
+        details: "Student, Dr. D. Y. Patil Institute of Technology, Pimpri, Pune",
+        github: "",
+        email: "ash.patni13@gmail.com",
+        linkedin: "https://www.linkedin.com/in/aishwarya-patni-152049210/",
     },
     {
-        name: "Team Member 2",
-        details: "Team member 2 details here...",
-        github: "https://github.com/member2",
-        email: "member2@example.com",
-        linkedin: "https://www.linkedin.com/member2",
+        name: "Sakshi Kulkarni",
+        details: "Student, Dr. D. Y. Patil Institute of Technology, Pimpri, Pune",
+        github: "",
+        email: "kulkarnisakshi2903@gmail.com",
+        linkedin: "https://www.linkedin.com/in/sakshi-kulkarni29",
     },
     {
-        name: "Team Member 3",
-        details: "Team member 3 details here...",
-        github: "https://github.com/member3",
-        email: "member3@example.com",
-        linkedin: "https://www.linkedin.com/member3",
+        name: "Prachi Patel",
+        details: "Student, Dr. D. Y. Patil Institute of Technology, Pimpri, Pune",
+        github: "https://github.com/Prachi056",
+        email: "patelps.prachi@gmail.com",
+        linkedin: "https://www.linkedin.com/in/prachi-patel-b9033221b",
     },
     {
-        name: "Team Member 4",
-        details: "Team member 4 details here...",
-        github: "https://github.com/member4",
-        email: "member4@example.com",
-        linkedin: "https://www.linkedin.com/member4",
+        name: "Manali Satav",
+        details: "Student, Dr. D. Y. Patil Institute of Technology, Pimpri, Pune",
+        github: "",
+        email: "manalisatav1501@gmail.com",
+        linkedin: "http://www.linkedin.com/in/manali-satav-421a21216",
     },
 ];
 
@@ -74,9 +74,9 @@ const About = () => {
                                     <Card.Title>{member.name}</Card.Title>
                                     <Card.Text>{member.details}</Card.Text>
                                     <div >
-                                        <a href={member.github} target="_blank" rel="noopener noreferrer" style={styleAncher}><GitHubIcon /> </a>
-                                        <a style={{ marginLeft: "24px", marginRight: "24px", ...styleAncher }} href={`mailto:${member.email}`} target="_blank" rel="noopener noreferrer"> <EmailIcon /></a>
-                                        <a style={styleAncher} href={member.linkedin} target="_blank" rel="noopener noreferrer"> <LinkedInIcon /></a>
+                                        {member.github !== "" ? <a href={member.github} target="_blank" rel="noopener noreferrer" style={{ marginLeft: "24px", marginRight: "24px", ...styleAncher }}><GitHubIcon /> </a> : null}
+                                        {member.email !== "" ? <a style={{ marginLeft: "24px", marginRight: "24px", ...styleAncher }} href={`mailto:${member.email}`} target="_blank" rel="noopener noreferrer"> <EmailIcon /></a> : null}
+                                        {member.linkedin !== "" ? <a style={{ marginLeft: "24px", marginRight: "24px", ...styleAncher }} href={member.linkedin} target="_blank" rel="noopener noreferrer"> <LinkedInIcon /></a> : null}
                                     </div>
                                 </Card.Body>
                             </Card>
@@ -92,9 +92,9 @@ const About = () => {
                                     <Card.Title>{member.name}</Card.Title>
                                     <Card.Text>{member.details}</Card.Text>
                                     <div >
-                                        <a href={member.github} target="_blank" rel="noopener noreferrer" style={styleAncher}><GitHubIcon /> </a>
-                                        <a style={{ marginLeft: "24px", marginRight: "24px", ...styleAncher }} href={`mailto:${member.email}`} target="_blank" rel="noopener noreferrer"> <EmailIcon /></a>
-                                        <a style={styleAncher} href={member.linkedin} target="_blank" rel="noopener noreferrer"> <LinkedInIcon /></a>
+                                        {member.github !== "" ? <a href={member.github} target="_blank" rel="noopener noreferrer" style={{ marginLeft: "24px", marginRight: "24px", ...styleAncher }}><GitHubIcon /> </a> : null}
+                                        {member.email !== "" ? <a style={{ marginLeft: "24px", marginRight: "24px", ...styleAncher }} href={`mailto:${member.email}`} target="_blank" rel="noopener noreferrer"> <EmailIcon /></a> : null}
+                                        {member.linkedin !== "" ? <a style={{ marginLeft: "24px", marginRight: "24px", ...styleAncher }} href={member.linkedin} target="_blank" rel="noopener noreferrer"> <LinkedInIcon /></a> : null}
                                     </div>
                                 </Card.Body>
                             </Card>
@@ -110,9 +110,9 @@ const About = () => {
                                     <Card.Title>{member.name}</Card.Title>
                                     <Card.Text>{member.details}</Card.Text>
                                     <div >
-                                        <a href={member.github} target="_blank" rel="noopener noreferrer" style={styleAncher}><GitHubIcon /> </a>
-                                        <a style={{ marginLeft: "24px", marginRight: "24px", ...styleAncher }} href={`mailto:${member.email}`} target="_blank" rel="noopener noreferrer"> <EmailIcon /></a>
-                                        <a style={styleAncher} href={member.linkedin} target="_blank" rel="noopener noreferrer"> <LinkedInIcon /></a>
+                                        {member.github !== "" ? <a href={member.github} target="_blank" rel="noopener noreferrer" style={{ marginLeft: "24px", marginRight: "24px", ...styleAncher }}><GitHubIcon /> </a> : null}
+                                        {member.email !== "" ? <a style={{ marginLeft: "24px", marginRight: "24px", ...styleAncher }} href={`mailto:${member.email}`} target="_blank" rel="noopener noreferrer"> <EmailIcon /></a> : null}
+                                        {member.linkedin !== "" ? <a style={{ marginLeft: "24px", marginRight: "24px", ...styleAncher }} href={member.linkedin} target="_blank" rel="noopener noreferrer"> <LinkedInIcon /></a> : null}
                                     </div>
                                 </Card.Body>
                             </Card>
