@@ -28,6 +28,7 @@ const Decode = () => {
 
   const saveData = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
 
     let formData = new FormData();
     formData.append(
@@ -87,6 +88,8 @@ const Decode = () => {
       setMessage("Something went wrong");
       setIsError(true);
       setIsSuccess(false);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -244,8 +247,20 @@ const Decode = () => {
             </div>
 
             <div class="d-grid gap-2">
-              <button type="submit" className="btn btn-primary">
-                Decode
+              <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <span
+                    className="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                ) : (
+                  "Decode"
+                )}
               </button>
             </div>
           </form>
