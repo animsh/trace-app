@@ -37,7 +37,7 @@ const EncodedFile = ({ file }) => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/users/send",
+       Constants.API_URL + ":8000/api/users/send",
         data,
         {
           headers: {
