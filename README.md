@@ -68,3 +68,47 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Screenshots
+
+<details>
+  <summary>Authentication</summary>
+  <img src="assets/image-035.png"  name="image-name">
+  <img src="assets/image-036.png"  name="image-name">
+</details>
+
+<details>
+  <summary>Home Page</summary>
+  <img src="assets/image-037.png"  name="image-name">
+</details>
+
+<details>
+  <summary>User Search</summary>
+  <img src="assets/image-026.png"  name="image-name">
+</details>
+
+<details>
+  <summary>Operation: Encode</summary>
+  <img src="assets/image-038.png"  name="image-name">
+</details>
+
+<details>
+  <summary>Operation: Decode</summary>
+  <img src="assets/image-039.png"  name="image-name">
+</details>
+
+<details>
+  <summary>Storage</summary>
+  <img src="assets/image-040.png"  name="image-name">
+  <img src="assets/image-030.png"  name="image-name">
+</details>
+
+<details>
+  <summary>Received Files</summary>
+  <img src="assets/image-031.png"  name="image-name">
+</details>
+
+<details>
+  <summary>User Profile</summary>
+  <img src="assets/image-032.jpg"  name="image-name">
+</details>
